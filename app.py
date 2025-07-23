@@ -35,7 +35,7 @@ def calculate():
         price = size * base_price_per_sqft[location] * type_multiplier[type]
         price = round(price, 2)
         
-        return render_template('index.html', result=f"{price:,.2f}")  # Updated: Formatted with 2 decimal places for clarity
+        return render_template('index.html', result=f"{price:,.2f}",location=location.capitalize())  # Updated: Formatted with 2 decimal places for clarity
     except ValueError:
         return render_template('index.html', result="Error in calculation. Please check your input.")
 
